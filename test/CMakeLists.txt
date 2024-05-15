@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.2)
-project(divider_tests)
+project(kllm_tests)
 
 add_subdirectory(lib/googletest)
 
-include_directories(${DIVISION_HEADERS_DIR})
+include_directories(${KML_HEADERS_DIR})
 include_directories(lib/googletest/googletest/include)
 
-set(SOURCE_FILES main.cpp src/divider_tests.cpp)
+set(SOURCE_FILES main.cpp src/kllm_tests.cpp)
 
-add_executable(divider_tests ${SOURCE_FILES})
-target_link_libraries(divider_tests division gtest)
-install(TARGETS divider_tests DESTINATION bin)
+add_executable(kllm_tests ${SOURCE_FILES})
+target_link_libraries(kllm_tests kml gtest)
+install(TARGETS kllm_tests DESTINATION bin)
 

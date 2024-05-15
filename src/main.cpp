@@ -1,10 +1,10 @@
-#include <division.h>
+#include <kml.h>
 #include <iostream>
 
 using namespace std;
 
-static const char *const HEADER = "\nDivider © 2018 Monkey Claps Inc.\n\n";
-static const char *const USAGE = "Usage:\n\tdivider <numerator> <denominator>\n\nDescription:\n\tComputes the result of a fractional division,\n\tand reports both the result and the remainder.\n";
+static const char *const HEADER = "\nKllm © 2018 Monkey Claps Inc.\n\n";
+static const char *const USAGE = "Usage:\n\tkllm <numerator> <denominator>\n\nDescription:\n\tComputes the result of a fractional kml,\n\tand reports both the result and the remainder.\n";
 
 int main(int argc, const char *argv[]) {
   Fraction f;
@@ -20,13 +20,13 @@ int main(int argc, const char *argv[]) {
   f.numerator = atoll(argv[1]);
   f.denominator = atoll(argv[2]);
 
-  Division d = Division(f);
+  Kml d = Kml(f);
   try {
-    DivisionResult r = d.divide();
+    KmlResult r = d.divide();
 
-    cout << "Division : " << f.numerator << " / " << f.denominator << " = " << r.division << "\n";
+    cout << "Kml : " << f.numerator << " / " << f.denominator << " = " << r.kml << "\n";
     cout << "Remainder: " << f.numerator << " % " << f.denominator << " = " << r.remainder << "\n";
-  } catch (DivisionByZero) {
+  } catch (KmlByZero) {
     cout << "Can not divide by zero, Homer. Sober up!\n";
   }
   return 0;
